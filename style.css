@@ -472,3 +472,83 @@ grid-template-columns:1fr;
     transform: translateY(-3px);
     box-shadow: 0 0 30px rgba(10,132,255,.45);
 }
+
+/* Ajustes para celular */
+@media (max-width: 600px){
+
+    body{
+        overflow-x:hidden;
+    }
+
+    .header{
+        padding:20px 5%;
+    }
+
+    .logo{
+        font-size:1.7rem;
+    }
+
+    .nav{
+        gap:15px;
+    }
+
+    .nav a{
+        font-size:14px;
+    }
+
+    .hero{
+        padding:60px 5%;
+        gap:40px;
+    }
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        width:100%;
+    }
+
+    .hero-buttons button,
+    .hero-buttons .button{
+        width:100%;
+        text-align:center;
+    }
+
+    .stats{
+        justify-content:center;
+        text-align:center;
+    }
+
+    .phone{
+        width:280px;
+        height:560px;
+    }
+
+    section{
+        padding:70px 5%;
+    }
+
+    h2{
+        font-size:2rem;
+        margin-bottom:40px;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+    .portfolio-grid{
+        grid-template-columns:1fr;
+    }
+
+    .portfolio-card{
+        width:100%;
+    }
+
+}

@@ -1,0 +1,474 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+ --bg:#050505;
+ --surface:#101010;
+ --surface2:#171717;
+ --text:#fff;
+ --muted:#b5b5b5;
+ --blue:#0A84FF;
+ --border:rgba(255,255,255,.08);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{
+font-family:'Outfit',sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow-x:hidden;
+line-height:1.6;
+}
+#particles{
+position:fixed;inset:0;z-index:-2;
+background:
+radial-gradient(circle,#0A84FF22 1px,transparent 2px),
+radial-gradient(circle,#ffffff12 1px,transparent 2px);
+background-size:120px 120px,180px 180px;
+animation:move 30s linear infinite;
+}
+@keyframes move{to{background-position:600px 600px}}
+.hero-light{
+position:absolute;width:700px;height:700px;right:-120px;top:-120px;
+background:var(--blue);filter:blur(220px);opacity:.18;z-index:-1;
+}
+.header{
+position:sticky;top:0;z-index:1000;
+display:flex;justify-content:space-between;align-items:center;
+padding:22px 8%;
+backdrop-filter:blur(18px);
+background:rgba(5,5,5,.55);
+border-bottom:1px solid var(--border);
+}
+.logo{text-decoration:none;color:#fff;font-size:2rem;font-weight:800}
+.logo span{color:var(--blue)}
+.nav{display:flex;gap:28px}
+.nav a{text-decoration:none;color:#ddd;font-weight:500;position:relative}
+.nav a:hover{color:#fff}
+.nav a::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--blue);transition:.3s}
+.nav a:hover::after{width:100%}
+.hero{
+display:flex;align-items:center;justify-content:space-between;
+gap:70px;padding:90px 8%;min-height:100vh;position:relative;
+}
+.hero-text{max-width:620px;animation:fade .8s}
+.badge{display:inline-block;padding:10px 18px;border:1px solid var(--border);border-radius:999px;background:#ffffff08;color:#cfcfcf}
+.hero h1{font-size:4.6rem;line-height:1.05;margin:24px 0}
+.hero h1 span{display:block;color:var(--blue);text-shadow:0 0 30px rgba(10,132,255,.5)}
+.hero p{color:var(--muted);font-size:1.1rem}
+.hero-buttons{display:flex;gap:16px;margin-top:32px;flex-wrap:wrap}
+button{border:none;border-radius:14px;padding:15px 28px;font:600 1rem Outfit,sans-serif;background:var(--blue);color:#fff;transition:.3s;cursor:pointer}
+button:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(10,132,255,.45)}
+.secondary{background:transparent;border:1px solid rgba(10,132,255,.5)}
+.secondary:hover{background:rgba(10,132,255,.12)}
+.stats{display:flex;gap:32px;margin-top:50px;flex-wrap:wrap}
+.stats strong{display:block;color:var(--blue);font-size:1.5rem}
+.mockup{animation:float 6s ease-in-out infinite}
+.phone{
+width:330px;height:650px;border-radius:42px;padding:12px;
+background:#0a0a0a;border:1px solid rgba(255,255,255,.12);
+box-shadow:0 30px 80px rgba(10,132,255,.18);
+}
+.phone-top{width:110px;height:24px;background:#000;border-radius:20px;margin:8px auto 0}
+.phone-screen{
+height:calc(100% - 40px);margin-top:8px;border-radius:30px;
+background:linear-gradient(180deg,#151515,#070707);
+padding:28px;position:relative;overflow:hidden
+}
+.phone-screen::before{content:"";position:absolute;width:240px;height:240px;background:var(--blue);filter:blur(100px);opacity:.18;right:-50px;top:-50px}
+.app-logo{font-size:2rem;font-weight:800}.app-logo span{color:var(--blue)}
+.app-title{margin:20px 0;color:#ddd}
+.app-card{background:#ffffff0c;border:1px solid var(--border);border-radius:18px;padding:18px;margin-top:14px}
+.app-card h4{color:var(--blue)}
+.app-button{width:100%;margin-top:24px}
+section{padding:110px 8%}
+h2{text-align:center;font-size:2.7rem;margin-bottom:60px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
+.card,.project{
+background:linear-gradient(180deg,#131313,#0e0e0e);
+border:1px solid var(--border);
+border-radius:24px;padding:30px;transition:.35s}
+.card:hover,.project:hover{transform:translateY(-8px);border-color:rgba(10,132,255,.6);box-shadow:0 20px 40px rgba(10,132,255,.15)}
+.about{max-width:760px;margin:auto;text-align:center;color:var(--muted)}
+footer{padding:40px;text-align:center;border-top:1px solid var(--border);color:#888}
+@keyframes float{50%{transform:translateY(-14px)}}
+@keyframes fade{from{opacity:0;transform:translateY(30px)}to{opacity:1}}
+@media(max-width:960px){
+.header{flex-direction:column;gap:16px}
+.nav{flex-wrap:wrap;justify-content:center}
+.hero{flex-direction:column;text-align:center}
+.hero h1{font-size:3rem}
+.hero-buttons,.stats{justify-content:center}
+.phone{width:300px;height:590px}
+}
+
+
+
+section,
+.card,
+.project,
+.phone{
+
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+
+}
+
+.show{
+
+    opacity:1;
+    transform:none;
+
+}
+
+.header.scrolled{
+
+    background:rgba(5,5,5,.85);
+    backdrop-filter:blur(18px);
+    box-shadow:0 8px 30px rgba(0,0,0,.35);
+
+}
+
+.nav a.active{
+
+    color:#0A84FF;
+
+}
+
+.top-button{
+
+position:fixed;
+right:30px;
+bottom:30px;
+
+width:55px;
+height:55px;
+
+border-radius:50%;
+
+background:#0A84FF;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+font-size:22px;
+
+opacity:0;
+pointer-events:none;
+
+transition:.3s;
+
+z-index:999;
+
+}
+
+.top-button.show{
+
+opacity:1;
+pointer-events:auto;
+
+}
+
+.top-button:hover{
+
+transform:translateY(-5px);
+
+}
+
+
+
+
+
+
+.portfolio-subtitle{
+
+max-width:700px;
+margin:0 auto 60px;
+text-align:center;
+color:#aaa;
+font-size:18px;
+
+}
+
+.portfolio-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(420px,1fr));
+
+gap:40px;
+
+}
+
+.portfolio-card{
+
+background:#101010;
+
+border:1px solid rgba(255,255,255,.08);
+
+border-radius:25px;
+
+overflow:hidden;
+
+transition:.4s;
+
+}
+
+.portfolio-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 0 45px rgba(10,132,255,.25);
+
+border-color:#0A84FF;
+
+}
+
+.portfolio-image{
+
+position:relative;
+
+height:280px;
+
+overflow:hidden;
+
+}
+
+.portfolio-image img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.portfolio-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+.portfolio-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:rgba(0,0,0,.75);
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+gap:20px;
+
+opacity:0;
+
+transition:.4s;
+
+}
+
+.portfolio-card:hover .portfolio-overlay{
+
+opacity:1;
+
+}
+
+.portfolio-btn{
+
+padding:14px 25px;
+
+background:#0A84FF;
+
+border-radius:12px;
+
+color:white;
+
+text-decoration:none;
+
+font-weight:600;
+
+transition:.3s;
+
+}
+
+.portfolio-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+.secondary-btn{
+
+background:#202020;
+
+border:1px solid #0A84FF;
+
+}
+
+.portfolio-content{
+
+padding:30px;
+
+}
+
+.status{
+
+display:inline-block;
+
+padding:8px 16px;
+
+border-radius:30px;
+
+font-size:13px;
+
+font-weight:600;
+
+margin-bottom:18px;
+
+}
+
+.finished{
+
+background:#0A84FF22;
+
+color:#4da3ff;
+
+}
+
+.progress{
+
+background:#ffffff10;
+
+color:#ddd;
+
+}
+
+.portfolio-content h3{
+
+font-size:28px;
+
+margin-bottom:15px;
+
+}
+
+.portfolio-content p{
+
+color:#aaa;
+
+line-height:1.7;
+
+margin-bottom:25px;
+
+}
+
+.techs{
+
+display:flex;
+
+gap:10px;
+
+flex-wrap:wrap;
+
+}
+
+.techs span{
+
+padding:8px 15px;
+
+border-radius:30px;
+
+background:#171717;
+
+border:1px solid rgba(255,255,255,.08);
+
+font-size:14px;
+
+transition:.3s;
+
+}
+
+.techs span:hover{
+
+background:#0A84FF;
+
+}
+
+.future{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:linear-gradient(135deg,#0f0f0f,#050505);
+
+}
+
+.coming-soon{
+
+text-align:center;
+
+}
+
+.coming-soon h3{
+
+font-size:34px;
+
+margin:20px 0;
+
+}
+
+.coming-soon p{
+
+color:#999;
+
+}
+
+@media(max-width:900px){
+
+.portfolio-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.hero-buttons .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 14px;
+    padding: 15px 28px;
+
+    background: var(--blue);
+    color: #fff;
+
+    font: 600 1rem Outfit, sans-serif;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.hero-buttons .button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(10,132,255,.45);
+}

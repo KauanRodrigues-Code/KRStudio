@@ -640,3 +640,23 @@ grid-template-columns:1fr;
     }
 
 }
+
+/* Ajuste botão do mockup no mobile */
+
+@media (max-width:600px){
+
+    .phone-screen{
+        padding:20px;
+    }
+
+    .app-button{
+        width:100%;
+        max-width:100%;
+        padding:12px 10px;
+        font-size:14px;
+        white-space:normal;
+        text-align:center;
+        overflow:hidden;
+    }
+
+}

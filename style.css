@@ -473,15 +473,30 @@ grid-template-columns:1fr;
     box-shadow: 0 0 30px rgba(10,132,255,.45);
 }
 
-/* Ajustes para celular */
+/* ============================= */
+/* CORREÇÃO RESPONSIVIDADE MOBILE */
+/* KR STUDIO */
+/* ============================= */
+
 @media (max-width: 600px){
 
+    *{
+        max-width:100%;
+    }
+
     body{
+        width:100%;
         overflow-x:hidden;
     }
 
+
+    /* HEADER */
+
     .header{
+        width:100%;
         padding:20px 5%;
+        flex-direction:column;
+        gap:18px;
     }
 
     .logo{
@@ -489,49 +504,98 @@ grid-template-columns:1fr;
     }
 
     .nav{
-        gap:15px;
+        width:100%;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:14px;
     }
 
     .nav a{
         font-size:14px;
     }
 
+
+    /* HERO */
+
     .hero{
-        padding:60px 5%;
-        gap:40px;
+        width:100%;
+        padding:60px 20px;
+        flex-direction:column;
+        justify-content:center;
+        gap:50px;
+        overflow:hidden;
+    }
+
+    .hero-text{
+        width:100%;
+        max-width:100%;
+        text-align:center;
+    }
+
+    .badge{
+        font-size:13px;
     }
 
     .hero h1{
-        font-size:2.5rem;
+        font-size:2.3rem;
+        line-height:1.15;
     }
 
     .hero p{
         font-size:1rem;
     }
 
+
+    /* BOTÕES */
+
     .hero-buttons{
-        flex-direction:column;
         width:100%;
+        flex-direction:column;
+        align-items:center;
     }
 
     .hero-buttons button,
     .hero-buttons .button{
+
         width:100%;
+        max-width:320px;
+
+        justify-content:center;
+        text-align:center;
+
+    }
+
+
+    /* ESTATÍSTICAS */
+
+    .stats{
+        width:100%;
+        justify-content:center;
+        gap:25px;
         text-align:center;
     }
 
-    .stats{
+
+    /* MOCKUP CELULAR */
+
+    .mockup{
+        width:100%;
+        display:flex;
         justify-content:center;
-        text-align:center;
     }
 
     .phone{
-        width:280px;
-        height:560px;
+        width:270px;
+        height:540px;
     }
 
+
+    /* SEÇÕES */
+
     section{
-        padding:70px 5%;
+        width:100%;
+        padding:70px 20px;
     }
 
     h2{
@@ -539,16 +603,40 @@ grid-template-columns:1fr;
         margin-bottom:40px;
     }
 
+
+    /* CARDS */
+
     .cards{
+        width:100%;
         grid-template-columns:1fr;
     }
 
+    .card{
+        width:100%;
+    }
+
+
+    /* PORTFÓLIO */
+
     .portfolio-grid{
-        grid-template-columns:1fr;
+        width:100%;
+        display:block;
     }
 
     .portfolio-card{
         width:100%;
+        margin-bottom:25px;
+    }
+
+    .portfolio-image{
+        height:220px;
+    }
+
+
+    /* CONTATO */
+
+    #contato .hero-buttons{
+        align-items:center;
     }
 
 }

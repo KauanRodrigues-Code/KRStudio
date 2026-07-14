@@ -660,3 +660,39 @@ grid-template-columns:1fr;
     }
 
 }
+
+
+/* Ajuste final do mockup mobile */
+
+@media (max-width:600px){
+
+    .phone{
+        height:570px;
+    }
+
+    .phone-screen{
+        height:calc(100% - 40px);
+        padding:22px;
+        overflow:hidden;
+    }
+
+    .app-card{
+        padding:14px;
+        margin-top:12px;
+    }
+
+    .app-card p{
+        font-size:13px;
+        line-height:1.4;
+    }
+
+    .app-button{
+        width:100%;
+        margin-top:18px;
+        padding:12px 8px;
+        font-size:13px;
+        line-height:1.3;
+        white-space:normal;
+    }
+
+}
